@@ -6,8 +6,7 @@ jobs:
     steps:
       - run: echo hello world
 
-build_skim:
-  greeting:
+  build_skim:
     runs-on: ubuntu-latest
     container: rootproject/root:6.26.10-conda
     steps:
