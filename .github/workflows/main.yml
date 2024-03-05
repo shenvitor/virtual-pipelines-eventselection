@@ -51,7 +51,7 @@ jobs:
           path: skim_ggH.root
 
   plot:
-    needs: build_skim
+    needs: skim
     runs-on: ubuntu-latest
     container: rootproject/root:6.26.10
     steps:
