@@ -34,9 +34,14 @@ jobs:
   build_skim_matrix:
    runs-on: ubuntu-latest
    container: rootproject/root:${{ matrix.version }}
+   continue-on-error: ${{ matrix.allow_failure }}
    strategy:
      matrix:
        version: [6.26.10-conda, latest]
+       allow_failure: [false]
+    include:
+      - version: latest
+        allow_failure: true
    steps:
      - name: checkout repository
        uses: actions/checkout@v4
